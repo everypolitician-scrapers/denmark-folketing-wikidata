@@ -17,8 +17,8 @@ def wikinames_from(url)
 end
 
 def fetch_info(names)
-  WikiData.ids_from_pages('en', names).each do |name, id|
-    data = WikiData::Fetcher.new(id: id).data('en', 'fr') rescue nil
+  WikiData.ids_from_pages('da', names).each do |name, id|
+    data = WikiData::Fetcher.new(id: id).data('da') rescue nil
     unless data
       warn "No data for #{p}"
       next
