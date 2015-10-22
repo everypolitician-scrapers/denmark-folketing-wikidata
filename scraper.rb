@@ -2,6 +2,7 @@ require 'scraperwiki'
 require 'wikidata/fetcher'
 require 'nokogiri'
 require 'open-uri/cached'
+require 'rest-client'
 
 OpenURI::Cache.cache_path = '.cache'
 
@@ -31,3 +32,5 @@ end
 names = wikinames_from('https://da.wikipedia.org/wiki/Folketingsmedlemmer_valgt_i_2015')
 
 fetch_info names.uniq
+
+warn RestClient.post(ENV['MORPH_REBUILDER_URL'], {}) if ENV['MORPH_REBUILDER_URL']
