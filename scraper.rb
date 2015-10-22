@@ -20,7 +20,7 @@ def fetch_info(names)
   WikiData.ids_from_pages('da', names).each do |name, id|
     data = WikiData::Fetcher.new(id: id).data('da') rescue nil
     unless data
-      warn "No data for #{p}"
+      warn "No data for #{name} #{id}"
       next
     end
     data[:original_wikiname] = name
