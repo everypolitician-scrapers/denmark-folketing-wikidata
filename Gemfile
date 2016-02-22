@@ -1,10 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'colorize'
-gem 'mediawiki_api'
-gem 'nokogiri'
-gem 'open-uri-cached'
 gem 'pry'
-gem 'rest-client'
 gem 'scraperwiki', git: 'https://github.com/openaustralia/scraperwiki-ruby.git', branch: 'morph_defaults'
-gem 'wikidata-fetcher', '>=0.6.1', git: 'https://github.com/everypolitician/wikidata-fetcher.git'
+gem 'wikidata-fetcher', git: 'https://github.com/everypolitician/wikidata-fetcher.git'
+gem 'wikisnakker', git: 'https://github.com/everypolitician/wikisnakker.git'
