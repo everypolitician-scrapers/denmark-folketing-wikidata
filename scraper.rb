@@ -8,9 +8,7 @@ wp2015 = EveryPolitician::Wikidata.wikipedia_xpath(
 
 scraped = EveryPolitician::Wikidata.morph_wikinames(source: 'tmtmtmtm/denmark-folketing-wp', column: 'wikiname')
 
-category = WikiData::Category.new( "Kategori:Folketingsmedlemmer i 2010'erne", 'da').wikidata_ids
-
 sparq = 'SELECT ?item WHERE { ?item wdt:P39 wd:Q12311817 . }'
 p39s  = EveryPolitician::Wikidata.sparql(sparq)
 
-EveryPolitician::Wikidata.scrape_wikidata(ids: p39s | category | wp2015, names: { da: scraped })
+EveryPolitician::Wikidata.scrape_wikidata(ids: p39s | wp2015, names: { da: scraped })
