@@ -6,9 +6,7 @@ wp2015 = EveryPolitician::Wikidata.wikipedia_xpath(
   as_ids: true,
 )
 
-scraped = EveryPolitician::Wikidata.morph_wikinames(source: 'tmtmtmtm/denmark-folketing-wp', column: 'wikiname')
-
-sparq = 'SELECT ?item WHERE { ?item wdt:P39 wd:Q12311817 . }'
+sparq = 'SELECT ?item WHERE { ?item wdt:P39 wd:Q12311817 }'
 p39s  = EveryPolitician::Wikidata.sparql(sparq)
 
-EveryPolitician::Wikidata.scrape_wikidata(ids: p39s | wp2015, names: { da: scraped })
+EveryPolitician::Wikidata.scrape_wikidata(ids: p39s | wp2015)
